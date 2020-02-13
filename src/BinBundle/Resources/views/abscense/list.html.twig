@@ -1,0 +1,35 @@
+{% extends 'base2.html.twig' %}
+{% block content %}
+    <section id="main-content">
+        <section class="wrapper">
+            <center>
+                <div class="row">
+
+
+                </div> </section> </section>
+    </center>
+
+<center><h3>List of abscenses </h3></center>
+<center><table border="2">
+    <th>pupl</th>
+    <th>nbr</th>
+    <th>date</th>
+    <th>subject</th>
+
+    {% for a in abscenses %}
+        <tr>
+            <td>{{ a.pupl }}</td>
+            <td>{{ a.nbr }}</td>
+            <td>{{ a.date|date() }}</td>
+            <td>{{ a.subject}}</td>
+            <td><a  href="{{ path('deleteabs',{"id":a.id}) }}">delete</a></td>
+            <td><a  href="{{ path('updateabs',{"id":a.id}) }}">update</a></td>
+
+        </tr>
+    {% endfor %}
+</center>
+</table>
+{% endblock %}
+
+
+

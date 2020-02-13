@@ -1,0 +1,33 @@
+{% extends 'base2.html.twig' %}
+{% block content %}
+    <section id="main-content">
+        <section class="wrapper">
+            <center>
+                <div class="row">
+
+
+                </div> </section> </section>
+    </center>
+<center><h3>List of notifications </h3></center>
+<center><table border="2">
+    <th>category</th>
+    <th>sender</th>
+    <th>receiver</th>
+    <th>content</th>
+
+    {% for n in notifications %}
+        <tr>
+            <td>{{ n.category }}</td>
+            <td>{{ n.sender }}</td>
+            <td>{{ n.receiver }}</td>
+            <td>{{ n.content}}</td>
+            <td><a  href="{{ path('deletenot',{"id":n.id}) }}">delete</a></td>
+            <td><a  href="{{ path('updatenot',{"id":n.id}) }}">update</a></td>
+        </tr>
+    {% endfor %}
+</center>
+</table>
+{% endblock %}
+
+
+
